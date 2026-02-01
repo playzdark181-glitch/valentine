@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Valentine 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #ffb6c1; /* pink background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .card {
+      background: white;
+      padding: 40px 50px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      position: relative;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 10px;
+    }
+
+    .emojis {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      position: relative;
+      height: 80px;
+    }
+
+    button {
+      padding: 12px 26px;
+      font-size: 16px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    #yes:hover {
+      background: #e63956;
+    }
+
+    #no {
+      background: #ddd;
+      color: #555;
+      position: absolute;
+      left: 120px;
+      top: 0;
+    }
+
+    .bottom-text {
+      margin-top: 25px;
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="emojis">💖🌸💌✨</div>
+    <h1>TANISHKA WOULD YOU BE MY VALENTINE</h1>
+
+    <div class="buttons">
+      <button id="yes" onclick="alert('YAY 💕 Best Valentine ever! 🥰')">
+        Yes 💘
+      </button>
+      <button id="no">No</button>
+    </div>
+
+    <div class="bottom-text">
+      no seems a bit 🙈
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+
+    noBtn.addEventListener("mouseover", () => {
+      const card = document.querySelector(".card");
+      const cardRect = card.getBoundingClientRect();
+
+      const maxX = cardRect.width - noBtn.offsetWidth - 20;
+      const maxY = 60;
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+  </script>
+
+</body>
+</html>
